@@ -55,5 +55,9 @@ class Property:
             raise Exception("error: start and end must be within the bounds of"
             " the list")
             
+        # remove image from "start" position in list and insert image into
+        # "end" position in list
+        self.images.insert(end, self.images.pop(start))
+        
         
             

@@ -48,7 +48,8 @@ def testMoveImage():
     
     prop1.moveImage(0,1)
     assert(prop1.images == ["url2","url1"])
-    # todo: test no move, start and end are the same
+    prop1.moveImage(0,0)
+    assert(prop1.images == ["url2","url1"])
     
     # should raise error, uncomment to test
     # prop2 = Property("id_ex_1", [])
@@ -59,6 +60,12 @@ def testMoveImage():
     # prop3.moveImage(-1,0)
     # prop3.moveImage(0,2)
     # prop3.moveImage(1,-1)
+    
+    prop4 = Property("id_ex_2",["url1","url2","url3","url4"])
+    prop4.moveImage(1,2)
+    assert(prop4.images == ["url1","url3","url2","url4"])
+    prop4.moveImage(0,3)
+    assert(prop4.images == ["url3","url2","url4","url1"])
 
 def main():
     testInitProperty()
