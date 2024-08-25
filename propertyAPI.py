@@ -16,6 +16,12 @@ class PropertyAPI:
                 raise Exception("error: must provide a list of Properties")
             else:
                 self.properties[(prop.id)] = prop
+                
+    # display propertyAPI as a string
+    def printProperties(self):
+        for key,value in self.properties.items():
+            print(value)
+            print()
 
     # Purpose    : return list of properties
     # Parameters : self

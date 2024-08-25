@@ -20,6 +20,10 @@ class Property:
             if (not isinstance(img,str)):
                 raise Exception("error: given image is not a string")
         self.images = images
+    
+    # display property as a string
+    def __str__(self):
+        return f"{self.id} : \n\t {self.images}"
         
     # Purpose    : returns thumbnail image
     # Parameters : self
