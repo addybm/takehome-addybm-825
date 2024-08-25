@@ -13,4 +13,4 @@ Instructions for running this program:
     and modify the order of those images. When you quit, any changes will be
     saved in "database.json".
     
-    I have attached a video demo to show an example of using this program.
+    The video demo was too large to attach to this README.
