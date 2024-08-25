@@ -26,7 +26,19 @@ def readProperties():
         properties.append(Property(property["id"],property["images"]))
     
     return PropertyAPI(properties)
-    
+
+# Purpose    : saves modified information to the "database"
+# Parameters : properties - propertyAPI object
+# Returns    : none
+def saveInfo(properties):
+    data = {"properties" : []}
+    for prop in properties.getBrowseProperties():
+        data["properties"].append({"id" : prop.id, "images" : prop.getImages()})
+        
+    with open('database.json', 'w') as file:
+        json.dump(data, file)
+        
+    file.close()
 
 def main():
     
@@ -60,13 +72,10 @@ def main():
             " like to move: "))
             properties.modifyImageOrder(propID,start,end)
         elif (action == "q"):
-            # TODO: save info
+            saveInfo(properties)
             print("Thank you!")
         else:
             print("error: please choose a correct option")
-        
-    #if (action == "q"):
-        # TODO: save info
     
     
 if __name__ == "__main__":
